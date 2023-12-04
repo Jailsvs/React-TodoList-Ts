@@ -27,7 +27,7 @@ const TaskForm = ({btnText, taskList, setTaskList, task, handleUpdate}: Props) =
     }
   }, [task])
 
-  const addTaskHandler = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmitTask = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (handleUpdate) {
@@ -52,7 +52,7 @@ const TaskForm = ({btnText, taskList, setTaskList, task, handleUpdate}: Props) =
   }
 
   return (
-    <form className={styles.form} onSubmit={addTaskHandler}>
+    <form className={styles.form} onSubmit={handleSubmitTask}>
       <div className={styles.input_container}>
         <label htmlFor="title">Título:</label>
         <input type="text" name="title" 
